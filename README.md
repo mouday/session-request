@@ -2,6 +2,8 @@
 
 以类的形式封装请求接口，支持requests所有参数
 
+Github: [https://github.com/mouday/session-request](https://github.com/mouday/session-request)
+
 pypi: [https://pypi.org/project/session-request](https://pypi.org/project/session-request)
 
 
