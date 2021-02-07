@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function, unicode_literals
+
 from requests import Session
 
 
@@ -25,7 +27,9 @@ class SessionRequest(object):
 
     def request(self, **kwargs):
         """请求处理器"""
-        options = self.before_request({**self.kwargs, **kwargs})
+        # fix python2.7 do'not use {**kwargs}
+        kwargs.update(self.kwargs)
+        options = self.before_request(kwargs)
 
         response = self.session.request(**options)
 

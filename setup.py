@@ -3,6 +3,8 @@
 # @Date    : 2019-06-26
 # @Author  : Peng Shiyu
 
+from __future__ import print_function, unicode_literals
+
 import io
 import os
 
@@ -39,7 +41,7 @@ rm -rf dist build *.egg-info \
 
 ## 下载测试
 安装测试
-pip install -U spideradmin -i https://pypi.org/simple
+pip install -U session-request -i https://pypi.org/simple
 
 打包的用的setup必须引入
 
@@ -48,7 +50,7 @@ https://packaging.python.org/guides/making-a-pypi-friendly-readme/
 
 """
 
-VERSION = '0.0.1'
+VERSION = '0.0.3'
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -63,7 +65,7 @@ setup(
     version=VERSION,
     description="a http request class",
 
-    keywords='session request http api',
+    keywords='session, request, http, api',
     author='Peng Shiyu',
     author_email='pengshiyuyx@gmail.com',
     license='MIT',
@@ -74,8 +76,8 @@ setup(
 
     # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
+        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6"
     ],
 
     packages=find_packages(),
