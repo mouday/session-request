@@ -5,6 +5,7 @@
 
 from __future__ import print_function, unicode_literals
 
+import glob
 import io
 import os
 
@@ -50,9 +51,15 @@ https://packaging.python.org/guides/making-a-pypi-friendly-readme/
 
 """
 
-VERSION = '0.0.3'
-
 base_dir = os.path.dirname(os.path.abspath(__file__))
+
+# 版本号
+version_file = glob.glob("*/version.py", recursive=True)[0]
+
+with io.open(version_file, 'rb') as f:
+    version_var = {}
+    exec(f.read(), version_var)
+    VERSION = version_var['VERSION']
 
 with io.open("README.md", 'r', encoding='utf-8') as f:
     long_description = f.read()
@@ -76,8 +83,9 @@ setup(
 
     # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-        "Programming Language :: Python :: 2.7",
+        # "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
+        'Programming Language :: Python :: 3.7'
     ],
 
     packages=find_packages(),

@@ -1,5 +1,11 @@
 # session request
 
+![PyPI](https://img.shields.io/pypi/v/session-request.svg)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/session-request)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/session-request)
+![PyPI - License](https://img.shields.io/pypi/l/session-request)
+
+
 以类的形式封装请求接口，支持requests所有参数
 
 Github: [https://github.com/mouday/session-request](https://github.com/mouday/session-request)
@@ -16,10 +22,10 @@ pip install session-request
 ```python
 # -*- coding: utf-8 -*-
 
-from session_request import SessionRequest
+from session_request import Request
 
 
-class ClientApi(SessionRequest):
+class ClientApi(Request):
     def after_request(self, response):
         """请求后 响应处理器"""
         return response.json()
